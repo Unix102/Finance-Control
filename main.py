@@ -13,7 +13,7 @@ class Account:
 
     def addOperation(self):
         amount = int(input("Введите сумму дохода/расхода: "))
-        type = int(input("Доход - i, расход - e: "))
+        type = input("Доход - i, расход - e: ")
         if type == "i":
             self.balance += amount
         elif type == "e":
