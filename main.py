@@ -1,6 +1,17 @@
 import openpyxl
 import os
 
+'''
+Для синхронизации с таблицей нам нужно следущее: 
+import openpyxl  (по факту уже есть)
+workbook = openpyxl.Workbook()
+sheet = workbook.active
+sheet.append([name, ]) ну и сюда соответствующие элементы которые мы хотим добавить.
+
+workbook.save("C:\\data.xlsx")
+print("Сохранено на C:\\data.xlsx")
+'''
+
 logs = []
 
 
