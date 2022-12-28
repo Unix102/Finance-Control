@@ -1,16 +1,8 @@
 import openpyxl
 import os
 
-'''
-Для синхронизации с таблицей нам нужно следущее: 
-import openpyxl  (по факту уже есть)
-workbook = openpyxl.Workbook()
-sheet = workbook.active
-sheet.append([name, ]) ну и сюда соответствующие элементы которые мы хотим добавить.
 
-workbook.save("C:\\data.xlsx")
-print("Сохранено на C:\\data.xlsx")
-'''
+
 
 logs = []
 
@@ -179,6 +171,12 @@ if __name__ == '__main__':
                     elif data[1] == 'Перевод':
                         account.change_transactions(data[2])
                     account.add_operation(*data)
+                    workbook = openpyxl.Workbook()
+                    sheet = workbook.active
+                    sheet.append(data)
+
+                    workbook.save("C:\\data.xlsx")
+                    print("Сохранено на C:\\data.xlsx")
 
                 elif command[1] == 'delete':
                     index = int(input('Порядковый номер операции, которую нужно удалить: ')) - 1
